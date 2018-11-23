@@ -7,6 +7,7 @@
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
           <b-nav-item to="/articles">主页</b-nav-item>
+          <b-nav-item to="/archives">归档</b-nav-item>
           <b-nav-item to="/about">关于</b-nav-item>
           <b-nav-item to="/links">友链</b-nav-item>
         </b-navbar-nav>
@@ -31,34 +32,29 @@
 
     <div class="blog-sidebar">
       <p class="blog-gravatar">
-        <a href="#" title="大雄">
-          <img src="./images/hzw.jpg" alt="WKH">
+        <a href="#" :title="me.netName">
+          <img src="./images/hzw.jpg" alt="me.netName">
         </a>
       </p>
       <ul>
         <li>
-          <a href="/" title="WKH">
-            <Icon type="md-person" />WKH
+          <a href="#" :title="me.netName">
+            <Icon type="md-person" />{{me.netName}}
           </a>
         </li>
         <li>
-          <a href="#" title="After 95">
-            <Icon type="md-timer" />AFTER 95
+          <a href="#" :title="me.birthday">
+            <Icon type="md-timer"/><Time :time="birthday" type="date"/>        
           </a>
         </li>
         <li>
-          <a href="#" title="Location">
-            <Icon type="ios-compass" />LOCATION
+          <a href="#" :title="me.liveCity">
+            <Icon type="ios-compass" />{{me.liveCity}}
           </a>
         </li>
         <li>
-          <a href="#" title="Archives">
-            <Icon type="ios-archive" />ARCHIVES
-          </a>
-        </li>
-        <li>
-          <a href="#" title="JAVA">
-            <Icon type="md-code-working" />JAVA
+          <a href="#" :title="me.occupation">
+            <Icon type="md-code-working" />{{me.occupation}}
           </a>
         </li>
       </ul>
@@ -67,11 +63,23 @@
 </template>
 <script>
     export default {
-        data () {
-            return {
-                
-            };
-        },
+      data() {
+        return {
+          me: {},
+          birthday: '1994-02-21'
+        }
+      },
+      created() {
+        this.getProfile()
+      },
+      methods: {
+        getProfile() {
+          this.$http.get("me/findOne?id=1").then(result => {
+            this.me = result.body;
+            console.log(this.me)
+          });
+        }
+      }
        
     }
 </script>

@@ -65,6 +65,7 @@
       .article-title {
         h2 {
           font-size: 20px;
+          color: #000;
         }
       }
 

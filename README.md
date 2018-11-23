@@ -6,3 +6,4 @@
 + vue2 
 + iview组件库
 + bootstrap-vue组件库
++ mavoneditor富文本编辑器
