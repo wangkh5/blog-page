@@ -8,7 +8,7 @@
         </div>
         <div class="article-summary">
           <mavon-editor :toolbarsFlag="false" :editable="false" :ishljs="true"
-    :subfield="false" defaultOpen="preview" v-model="item.content"/>
+    :subfield="false" defaultOpen="preview" v-model="item.content" class="mavon-editor"/>
         </div>
         <p class="article-meta">
           <router-link to="" :title="item.title">
@@ -56,12 +56,29 @@
   }
 </script>
 
+<style lang="scss">
+.mavon-editor {
+  .v-show-content {
+    overflow-y: hidden !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+  .shadow {
+    box-shadow: none !important;
+  }
+  h2 {
+    margin-top: 5px !important;
+  }
+}
+</style>
 
 <style lang="scss" scoped>
   .article-list {
     .article {
       margin-top: 20px;
-      border-bottom: 1px solid #eee;
+      border: 2px solid #eee;
+      padding: 5px 5px 2px 10px; 
+
       .article-title {
         h2 {
           font-size: 20px;
@@ -80,7 +97,7 @@
         .markdown-body {
           font-size: 12px;
           min-height: 0px;
-          height: 160px;
+          height: 130px;
           width: auto;
           min-width: 0px;
         }

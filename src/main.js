@@ -1,6 +1,3 @@
-// 入口文件
-console.log('OK')
-
 import Vue from 'vue';
 
 import VueResource from 'vue-resource';
@@ -24,7 +21,6 @@ Vue.use(iView);
 import mavonEditor from 'mavon-editor'
 // import 'mavon-editor/dist/css/index.css'
 Vue.use(mavonEditor)
-
 
 import { Layout, Navbar, FormInput, Button } from 'bootstrap-vue/es/components';
 Vue.use(Layout);

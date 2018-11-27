@@ -7,14 +7,14 @@
     
     <span class="article-info">
       <span> 时间：<Time :time="blog.updateTime" /></span>
-      
       <span> / 浏览：{{blog.hits}} 次</span>
       <span> / 分类：{{blog.categoryId}}</span>
     </span>
 
     <div class="article-content"> 
       <mavon-editor :toolbarsFlag="false" :editable="false" :ishljs="true"
-:subfield="false" defaultOpen="preview" v-model="blog.content"/>
+:subfield="false" defaultOpen="preview" v-model="blog.content">
+      </mavon-editor>
     </div>
   </div>
 </div>
@@ -32,7 +32,8 @@
       this.getCategoryList();
       this.getArticle();
     },
-
+    computed: {
+    },
     methods: {
       // 获取所有分类
       getCategoryList(){
@@ -50,8 +51,6 @@
           });
         }
       }
-
-
     }
 
   }
@@ -79,7 +78,7 @@
       margin-top: 15px;
 
       .markdown-body {
-        font-size: 12px;
+        font-size: 13px;
       }
     }
   }
