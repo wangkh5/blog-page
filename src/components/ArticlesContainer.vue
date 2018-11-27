@@ -34,7 +34,7 @@
       return {
         tableData: [],
         currentPage: 1,
-        pageSize: 2,
+        pageSize: 5,
         totalRecord: 100,
       }
     },
