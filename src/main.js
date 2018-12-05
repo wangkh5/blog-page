@@ -21,9 +21,6 @@ Vue.use(Navbar);
 Vue.use(FormInput);
 Vue.use(Button);
 
-// import BootstrapVue from 'bootstrap-vue'
-// Vue.use(BootstrapVue);
-
 // 导入格式化时间的插件
 import moment from 'moment'
 // 定义全局的过滤器

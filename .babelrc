@@ -2,7 +2,7 @@
   "presets": ["env", "stage-0"],
   "plugins": ["transform-runtime", ["component", [
     {
-      "libraryName": "mint-ui",
+      "libraryName": "bootstrap-vue",
       "style": true
     }
   ]]]

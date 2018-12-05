@@ -9,7 +9,6 @@
           <b-nav-item to="/articles">主页</b-nav-item>
           <b-nav-item to="/archives">归档</b-nav-item>
           <b-nav-item to="/about">关于</b-nav-item>
-          <!-- <b-nav-item to="/links">友链</b-nav-item> -->
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-form>
@@ -52,9 +51,14 @@
             <Icon type="ios-compass" />{{me.liveCity}}
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#" :title="me.occupation">
             <Icon type="md-code-working" />{{me.occupation}}
+          </a>
+        </li> -->
+        <li>
+          <a href="https://github.com/wangkh5" :title="'github'" target="_blank">
+            <Icon type="logo-github" />GITHUB
           </a>
         </li>
       </ul>
