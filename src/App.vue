@@ -44,7 +44,7 @@
         </li>
         <li>
           <a href="#" :title="me.birthday">
-            <Icon type="md-timer"/><Time :time="birthday" type="date"/>        
+            <Icon type="md-timer"/>{{me.birthday | dateFormat("YYYY-MM-DD")}}     
           </a>
         </li>
         <li>
@@ -67,7 +67,6 @@
       data() {
         return {
           me: {},
-          birthday: '1994-02-21'
         }
       },
       created() {
@@ -77,7 +76,6 @@
         getProfile() {
           this.$http.get("me/findOne?id=1").then(result => {
             this.me = result.body;
-            console.log(this.me)
           });
         }
       }

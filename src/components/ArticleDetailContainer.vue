@@ -6,9 +6,10 @@
     </div>
     
     <span class="article-info">
-      <span> 时间：<Time :time="blogUpdateTime" /></span>
-      <span> / 浏览：{{blog.hits}} 次</span>
-      <span> / 分类：{{blog.categoryId}}</span>
+      <span>时间：{{blog.updateTime | dateFormat("YYYY-MM-DD HH:MM")}}</span>
+      <span>分类：{{blog.categoryName}}</span>
+      <span>标签：{{blog.tagNameList}}</span>
+      <span>浏览：{{blog.hits}} 次</span>
     </span>
 
     <div class="article-content"> 
@@ -25,25 +26,14 @@
     data() {
       return {
         blog: {},
-        categoryList: [],
-        blogUpdateTime: ''
       }
     },
     created() {
-      this.getCategoryList();
       this.getArticle();
     },
     computed: {
     },
     methods: {
-      // 获取所有分类
-      getCategoryList(){
-        this.$http.get("category/findAll")
-          .then(result => {
-          this.categoryList = result.body;
-        });
-      },
-
       getArticle() {
         if(this.$route.params.id){
           this.$http.get("blog/findOne?id="+this.$route.params.id)
@@ -70,9 +60,12 @@
     .article-info {
       font-size: 12px;
       color: #878c93;
-      // font-weight: 400;
       margin-top: 15px;
       display: block;
+
+      span {
+        margin-right: 10px; 
+      }
     }
 
     .article-content {
