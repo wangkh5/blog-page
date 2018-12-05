@@ -6,7 +6,7 @@
     </div>
     
     <span class="article-info">
-      <span> 时间：<Time :time="blog.updateTime" /></span>
+      <span> 时间：<Time :time="blogUpdateTime" /></span>
       <span> / 浏览：{{blog.hits}} 次</span>
       <span> / 分类：{{blog.categoryId}}</span>
     </span>
@@ -26,6 +26,7 @@
       return {
         blog: {},
         categoryList: [],
+        blogUpdateTime: ''
       }
     },
     created() {

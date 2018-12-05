@@ -9,7 +9,7 @@
           <b-nav-item to="/articles">主页</b-nav-item>
           <b-nav-item to="/archives">归档</b-nav-item>
           <b-nav-item to="/about">关于</b-nav-item>
-          <b-nav-item to="/links">友链</b-nav-item>
+          <!-- <b-nav-item to="/links">友链</b-nav-item> -->
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-form>
@@ -33,7 +33,7 @@
     <div class="blog-sidebar">
       <p class="blog-gravatar">
         <a href="#" :title="me.netName">
-          <img src="./images/hzw.jpg" alt="me.netName">
+          <img src="./images/qbs.jpg" alt="me.netName">
         </a>
       </p>
       <ul>

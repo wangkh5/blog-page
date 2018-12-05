@@ -8,14 +8,14 @@
         </div>
         <div class="article-summary">
           <mavon-editor :toolbarsFlag="false" :editable="false" :ishljs="true"
-    :subfield="false" defaultOpen="preview" v-model="item.content" class="mavon-editor"/>
+          :subfield="false" defaultOpen="preview" v-model="item.content" class="mavon-editor"/>
         </div>
         <p class="article-meta">
-          <router-link to="" :title="item.title">
+          <router-link :to="'/articledetail/' + item.id" :title="item.title">
             <Icon type="ios-time-outline" />
             <Time :time="item.createTime" type="relative" />
           </router-link>
-          <router-link class="more" to="" :title="item.title">
+          <router-link class="more" :to="'/articledetail/' + item.id" :title="item.title">
             <Icon type="ios-glasses-outline" />
             Read More
           </router-link>
@@ -34,7 +34,7 @@
       return {
         tableData: [],
         currentPage: 1,
-        pageSize: 5,
+        pageSize: 10,
         totalRecord: 100,
       }
     },
@@ -69,6 +69,18 @@
   h2 {
     margin-top: 5px !important;
   }
+
+  h1 {
+      font-size: 14px !important;
+  }
+          
+  h2 {
+    font-size: 14px !important;
+  }
+  
+  h3 {
+    font-size: 14px !important;
+  }
 }
 </style>
 
@@ -76,13 +88,14 @@
   .article-list {
     .article {
       margin-top: 20px;
-      border: 2px solid #eee;
-      padding: 5px 5px 2px 10px; 
-
+      border: 1px solid #eee;
+      padding: 15px 10px 10px 15px; 
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+      
       .article-title {
         h2 {
-          font-size: 20px;
           color: #000;
+          font-size: 15px;
         }
       }
 
@@ -95,7 +108,7 @@
         margin-top: 5px;
 
         .markdown-body {
-          font-size: 12px;
+          font-size: 14px;
           min-height: 0px;
           height: 130px;
           width: auto;
