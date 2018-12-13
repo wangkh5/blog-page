@@ -11,6 +11,12 @@ import App from './App.vue';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 Vue.use(iView);
+// import { Icon, Time, Page, BackTop} from 'iview';
+// import 'iview/dist/styles/iview.css';
+// Vue.component('Icon', Icon);
+// Vue.component('Time', Time);
+// Vue.component('Page', Page);
+// Vue.component('BackTop', BackTop);
 
 import mavonEditor from 'mavon-editor'
 Vue.use(mavonEditor)
@@ -30,6 +36,7 @@ Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
 
 // 设置请求的根路径
 Vue.http.options.root = '/';
+// Vue.http.options.root = 'http://127.0.0.1';
 // 全局设置 post 时候表单数据格式组织形式   application/x-www-form-urlencoded
 // Vue.http.options.emulateJSON = true;
 

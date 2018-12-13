@@ -3,7 +3,7 @@
     <!-- 导航条 -->
     <b-navbar toggleable="sm" type="light" variant="faded">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand href="#">WKH</b-navbar-brand>
+      <b-navbar-brand href="#">WANG</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
           <b-nav-item to="/articles">主页</b-nav-item>
@@ -42,8 +42,8 @@
           </a>
         </li>
         <li>
-          <a href="#" :title="me.birthday">
-            <Icon type="md-timer"/>{{me.birthday | dateFormat("YYYY-MM-DD")}}     
+          <a href="#" :title="me.occupation">
+            <Icon type="md-ionic" />{{me.occupation}}
           </a>
         </li>
         <li>
@@ -51,14 +51,14 @@
             <Icon type="ios-compass" />{{me.liveCity}}
           </a>
         </li>
-        <!-- <li>
-          <a href="#" :title="me.occupation">
-            <Icon type="md-code-working" />{{me.occupation}}
-          </a>
-        </li> -->
         <li>
           <a href="https://github.com/wangkh5" :title="'github'" target="_blank">
             <Icon type="logo-github" />GITHUB
+          </a>
+        </li>
+        <li>
+          <a href="#" :title="me.birthday">
+            <Icon type="md-timer"/>{{me.birthday | dateFormat("YYYY-MM-DD")}}
           </a>
         </li>
       </ul>

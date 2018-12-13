@@ -6,10 +6,7 @@
             <h2>{{item.title}}</h2>
           </router-link>
         </div>
-        <div class="article-summary">
-          <mavon-editor :toolbarsFlag="false" :editable="false" :ishljs="true"
-          :subfield="false" defaultOpen="preview" v-model="item.content" class="mavon-editor"/>
-        </div>
+        <div class="article-summary" v-html="item.digest"></div>
         <p class="article-meta">
           <router-link :to="'/articledetail/' + item.id" :title="item.title">
             <Icon type="ios-time-outline" />
@@ -56,46 +53,17 @@
   }
 </script>
 
-<style lang="scss">
-.mavon-editor {
-  .v-show-content {
-    overflow-y: hidden !important;
-    background: #ffffff !important;
-    padding: 0 !important;
-  }
-  .shadow {
-    box-shadow: none !important;
-  }
-  h2 {
-    margin-top: 5px !important;
-  }
-
-  h1 {
-      font-size: 14px !important;
-  }
-          
-  h2 {
-    font-size: 14px !important;
-  }
-  
-  h3 {
-    font-size: 14px !important;
-  }
-}
-</style>
-
 <style lang="scss" scoped>
   .article-list {
     .article {
-      margin-top: 20px;
+      margin-top: 15px;
       border: 1px solid #eee;
-      padding: 15px 10px 10px 15px; 
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+      padding: 10px 10px 7px 14px; 
       
       .article-title {
         h2 {
           color: #000;
-          font-size: 15px;
+          font-size: 16px;
         }
       }
 
@@ -106,23 +74,15 @@
 
       .article-summary {
         margin-top: 5px;
-
-        .markdown-body {
-          font-size: 14px;
-          min-height: 0px;
-          height: 130px;
-          width: auto;
-          min-width: 0px;
-        }
+        font-size: 13px;
+        // color: #000;
       }
 
       .article-meta {
-        margin-top: 10px;
         text-align: right;
         color: #878c93;
         font-size: 12px;
       }
-      
     }
 
     .article-pagination {
