@@ -35,8 +35,9 @@ Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
 })
 
 // 设置请求的根路径
-Vue.http.options.root = '/';
+// Vue.http.options.root = '/';
 // Vue.http.options.root = 'http://127.0.0.1';
+Vue.http.options.root = 'http://www.wangkaihua.com';
 // 全局设置 post 时候表单数据格式组织形式   application/x-www-form-urlencoded
 // Vue.http.options.emulateJSON = true;
 
