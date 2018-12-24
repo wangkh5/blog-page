@@ -13,7 +13,7 @@
     </span>
 
     <div class="article-content"> 
-      <mavon-editor :toolbarsFlag="false" :editable="false" :ishljs="true"
+      <mavon-editor :toolbarsFlag="false" :editable="false" :ishljs="true" :navigation="true"
 :subfield="false" defaultOpen="preview" v-model="blog.content">
       </mavon-editor>
     </div>
@@ -46,6 +46,14 @@
 
   }
 </script>
+<style>
+.v-note-navigation-wrapper {
+    position: fixed !important;
+    width: 345px !important;
+  }
+  
+</style>
+
 <style lang="scss" scoped>
   .article {
     color: #000;
